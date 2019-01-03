@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const moment = require('moment');
+const devs = ['333140974865874944', '510520286488035339'];
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -34,7 +35,7 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== "510520286488035339") return;
+
 
   
   if (message.content.startsWith(prefix + 'setwatch')) {

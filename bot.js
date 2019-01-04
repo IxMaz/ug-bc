@@ -11,7 +11,7 @@ client.on('message', message => {
       }
 });
 
-const client = new Discord.Client();
+
 //انا لا اتحمل مسؤولية اي باند يجيك من سيرفر او من دسكورد نفسه
 const x_x = "#run" //هنا تحط الامر اللي يشغل الهاك
 const teext = "by  Mouiz " //هنا تحط وش تبي يكون اسم الرومات الكتابيه
